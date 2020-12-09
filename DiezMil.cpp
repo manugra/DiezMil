@@ -24,10 +24,21 @@ using namespace std;
 
 #include "Funciones.h"
 
+void cambioValor(int &n) {
+	int* dirN;
+	dirN = &n;
+	*dirN = 10;
+	
 
+}
 
 int main() {
-
+	/*int n;
+	cout << "Numero: "; cin >> n;
+	cambioValor(n);
+	cout << endl;
+	cout << n;
+	system("pause");*/
 	srand(time(NULL));
 
 	int menuMain;
@@ -118,7 +129,8 @@ int main() {
 					
 
 				std::cout << endl;
-				puntos = jugadas(tirada);
+				//puntos = jugadas(tirada);
+				puntos = puntosJugada(tirada);
 				puntos_totales += puntos;
 				puntos_ronda += puntos;
 
@@ -157,7 +169,7 @@ int main() {
 
 				gotoxy(43, 0); std::cout << "|    PUNTAJE TOTAL " << puntos_totales;
 
-				gotoxy(0, 10); std::cout << "La jugada es " << nombres[indiceJugadas(tirada)] << "!  +" << puntos << "!" << endl;
+				gotoxy(0, 10); std::cout << "La jugada es " << nombres[jugada(tirada)] << "!  +" << puntos << "!" << endl;
 
 				gotoxy(0, 12); std::cout << "Puntaje de la ronda: "<< puntos_ronda << endl;
 

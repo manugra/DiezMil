@@ -25,3 +25,7 @@ int jugadas(int tirada[6]);//Busca las jugadas que se formaron y devuelve la de 
 int indiceJugadas(int tirada[6]);
 
 int comparoRondas(int rondasActual, int rondasRecord);
+
+int puntosJugada(int tirada[6]);
+
+int jugada(int tirada[6]);
