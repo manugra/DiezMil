@@ -234,12 +234,11 @@ int indiceJugadas(int tirada[6]) {
 	return indiceMayor;
 }
 
+//0 Si rondasActual es mayor a rondasRecord, 1 si rondasActual es menor a rondasRecord, 2 si son iguales
 int comparoRondas(int rondasActual, int rondasRecord) {
-	//0 Si rondasActual es mayor a rondasRecord, 1 si rondasActual es menor a rondasRecord, 2 si son iguales
 
 
 	if (rondasActual < rondasRecord) {
-		rondasRecord = rondasActual;
 		return 0;
 	}
 	else if (rondasActual > rondasRecord) {
@@ -248,7 +247,6 @@ int comparoRondas(int rondasActual, int rondasRecord) {
 	else if (rondasActual == rondasRecord) {
 		return 2;
 	}
-
 
 }
 
@@ -385,6 +383,7 @@ int jugada(int tirada[6]) {
 
 	
 }
+
 int puntosJugada(int tirada[6]) {
 	//evaluoDados();
 	//evaluoDados devuelve el array con todas las combinaciones 

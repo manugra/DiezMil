@@ -24,21 +24,10 @@ using namespace std;
 
 #include "Funciones.h"
 
-void cambioValor(int &n) {
-	int* dirN;
-	dirN = &n;
-	*dirN = 10;
-	
 
-}
 
 int main() {
-	/*int n;
-	cout << "Numero: "; cin >> n;
-	cambioValor(n);
-	cout << endl;
-	cout << n;
-	system("pause");*/
+
 	srand(time(NULL));
 
 	int menuMain;
@@ -98,15 +87,14 @@ int main() {
 			while (opcion1 == 1) {
 
 
-				std::cout << "TURNO DE " << jugador; std::cout << "      |   RONDA N " << cr << "     " << endl; //POR ACA SE MUESTRA EL PUNTAJE(LINEA 143)
+				std::cout << "TURNO DE " << jugador; std::cout << "      |   RONDA N " << cr << "     " << endl; //POR ACA SE MUESTRA EL PUNTAJE(LINEA 151)
 				std::cout << "-----------------------------------------------------------------------------------------------------------------";
 
 				for (int i = 0; i < 6; i++)//TIRO LOS 6 DADOS
 				{
 					
-
 					tirada[i] = numeroRandom();
-					//gotoxy(0, 3); cout << "DADO " << i + 1; cin >> tirada[i];
+					
 
 					switch (tirada[i])
 					{
@@ -138,22 +126,15 @@ int main() {
 
 					
 					puntos_totales -= puntos_ronda;
-
-					/*if (puntos_totales < 0) {
-						puntos_totales = 0;
-					}*/
 					
-					puntos_ronda = 0; //Si no hay combinacion ganadora, el jugador pierde todos los puntos.
-					opcion1 = 0;//Mas abajo pregunto el valor de esto para cortar el while
+					//puntos_ronda = 0; //Si no hay combinacion ganadora, el jugador pierde todos los puntos.
+					//opcion1 = 0;//Mas abajo pregunto el valor de esto para cortar el while
 					std::cout << "\nJugada nula. Perdiste tus puntos acumulados. Lo siento campeon!\n";
 					std::cout << "Continua para lanzar de nuevo!\n";
 					system("pause");
 					break;
 				}
 			
-				//puntos_totales += puntos_ronda;
-				//std::cout << jugadas(tirada) << endl;
-				//std::cout << puntos << endl;
 
 				if (puntos_totales > 10000) {
 
@@ -173,23 +154,16 @@ int main() {
 
 				gotoxy(0, 12); std::cout << "Puntaje de la ronda: "<< puntos_ronda << endl;
 
-				//int opcion1;//Si se lanza de nuevo o se termina la ronda.
+
 				if (puntos_totales == 10000) {
-					//puntos_totales += puntos_ronda;
+
 					cout << "Felicitaciones! Has Ganado el Diez Mil. Digite el 0 para salir..."; cin >> opcion1;
 				}
-
-				/*else if (opcion1 == 0) {
-					gotoxy(0, 14); std::cout << "Obtuviste 0! Perdiste el turno, lo siento!\n"; //Al obtener 0 en los dados se cambia el valor a 0 y me salteo la pregunta de tirar de nuevo
-				}	*/																            //Termina el turno
 
 				else {
 					std::cout << "Lanzar de nuevo/Finalizar ronda(1/0): "; std::cin >> opcion1;
 				}
 
-				/*if (opcion1 == 1) {
-					cr++;
-				}*/
 				
 				std::system("pause");
 				std::system("cls");
@@ -198,8 +172,9 @@ int main() {
 			std::system("cls");
 			if (puntos_totales != 10000) {
 				
-			opcion1 = 1;
+				opcion1 = 1;
 			}
+
 			puntos_ronda = 0;
 		
 			cr++;
@@ -210,13 +185,7 @@ int main() {
 			strcpy(jugadorRecord, jugador);
 			record = cr;
 		}
-		/*else
-		{
-			if (comparoRondas(cr, record) == 0) {
-				strcpy(jugadorRecord, jugador);
-				record = cr;
-			}	
-		}*/
+	
 		game_over(primerJuego, jugador, cr, jugadorRecord, record);
 			primerJuego = false;
 
